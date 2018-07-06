@@ -1,0 +1,28 @@
+<div class="add-post-modal">
+	<p>Додати матерiал</p>
+	<div class="modal-close cross"></div>
+	<form action="">
+		<div>
+			<ul class="categories">
+				<li ng-repeat="category in categoriesList">
+					<label>
+						<input type="radio" name="category-type" value="{{category.value}}">
+						<div><span>{{category.name}}</span></div>
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<label class="required"><span>Назва публікації</span><input placeholder="Тут має бути назва" required="required" type="text"></label>
+		</div>
+		<div>
+			<label class="required"><span>Моя думка</span><textarea placeholder="Поділися свою думкою з іншиншими" required="required"></textarea></label>
+		</div>
+		<div>
+			<label class="required"><span>Посилання</span><input placeholder="http://" required="required" type="text"></label>
+		</div>
+		<div class="buttons right">
+			<div class="button">Додати</div>
+		</div>
+	</form>
+</div>

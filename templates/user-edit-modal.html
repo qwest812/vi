@@ -1,0 +1,93 @@
+<form class="user-edit-modal" ng-controller="userpageCtrl">
+	
+	<script>
+		function loadData(){
+			/*
+			console.log("user-edit-modal.html START >");
+			
+			$.ajax({
+				url: "php/get_current_user_info.php",
+				type: "POST",
+				dataType: "html",
+				data: { },
+				beforeSend: function (xhr) {
+					xhr.overrideMimeType("text/plain; charset=x-user-defined");
+				}
+			}).done(function (data) {
+				console.log("resp: " + data)
+			});
+			console.log("user-edit-modal.html END >");
+			*/
+			alert('!');
+		}
+		loadData();
+	</script>
+	
+	<div class="user-full-image">
+		<div class="full-image-wrapper">
+			<img src="img/user-full.png" alt="user-large">
+		</div>
+		<div class="edit-image"></div>
+	</div>
+		<div class="name-surname-interests">
+			<label class="required"><span>Ім'я</span><input placeholder="Введіть ваше ім'я" required="required" type="text"></label>
+			<label class="required"><span>Прізвище</span><input placeholder="Введіть ваше прізвище" class="required" type="text"></label>
+			<label><span>Сфера інтересів</span><input placeholder="Що тобі цікаво для саморозвитку?" class="required" type="text"></label>
+		</div>
+		<div>
+			<label><span>Місце роботи</span><input placeholder="Нам цікаво де ти працюєш?" class="required" type="text"></label>
+			<label><span>Освіта</span><input placeholder="Яка у тебе освіта?" class="required" type="text"></label>
+		</div>
+	<div class="additional"">
+		<div>
+			<label><span>Життєве кредо</span><input placeholder="Яке твоє особисте переконання?" class="required" type="text"></label>
+		</div>
+		<div class="tel-birth-email">
+			<div class="tel">
+				<label><span>Номер телефону</span><input placeholder="+38 097 000-00-00" class="required" type="text"></label>
+				<div>
+					<label class="checkbox"><input type="checkbox"><span class="check"></span><span>Зняти конфіденційність</span></label>
+				</div>
+			</div>
+			<div class="birth">
+				<label><span>Рік народження</span><input placeholder="1990" class="required" type="text"></label>
+				<label class="checkbox"><input type="checkbox"><span class="check"></span><span>Зняти конфіденційність</span></label>
+			</div>
+			<div class="email">
+				<label class="required"><span>Електронна адреса</span><input placeholder="Адреса ел.пошти" class="required" type="text"></label>
+				<label class="checkbox"><input type="checkbox"><span class="check"></span><span>Зняти конфіденційність</span></label>
+			</div>
+		</div>
+		<div>
+			<label><span>Мої інтереси в професійному розвитку (теги)</span>
+				<tags-input ng-model="proTags" class="tags-field" contenteditable="true" placeholder="Додати тег" add-on-comma="false"><input class="tagsinput" type="text" data-role="tagsinput">
+					<auto-complete source="loadProTags($query)"></auto-complete>
+				</tags-input>
+			</label>
+			<label><span>Мої інтереси в особистісному розвитку (теги)</span>
+				<tags-input ng-model="personalTags" class="tags-field" contenteditable="true" placeholder="Додати тег" add-on-comma="false"><input class="tagsinput" type="text" data-role="tagsinput">
+					<auto-complete source="loadPersonalTags($query)"></auto-complete>
+				</tags-input>
+			</label>
+		</div>
+		<div class="cities">
+			<!--<label><span>Країна проживання</span>-->
+				<!--<input placeholder="Обери країну" type="text">-->
+				<!--<ul class="cities-list">-->
+				<!--</ul>-->
+			<!--</label>-->
+			<label ng-controller="TypeaheadCtrl"><span>Місто проживання</span>
+				<input type="text" placeholder="Обери місто" ng-model="asyncSelected" uib-typeahead="address as address.formatted_address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-template-url="../templates/item.html" typeahead-popup-template-url="../templates/dropdown.html">
+			</label>
+		</div>
+		<div>
+			<label><span>Улюблені розвиваючі книги</span><textarea placeholder="Які книги розвивають тебе?" name="" rows="4"></textarea></label>
+			<label><span>Улюблені розвиваючі фільми</span><textarea placeholder="Які фільми розвивають тебе?" name="" rows="4"></textarea></label>
+		</div>
+	</div>
+	<div class="bottom-controls">
+		<div class="edit-add-info"><span></span><span>Внести додаткову інформацію</span></div>
+		<div class="button">Зберегти</div>
+		<div class="button modal-close">Скасувати</div>
+	</div>
+</form>

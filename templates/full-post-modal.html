@@ -1,0 +1,74 @@
+<div class="modal-close cross"></div>
+<div class="post row type-{{post.post_type}}" data-post-id="{{post.post_id}}">
+	<div class="color-line"></div>
+	<div class="post-header">
+		<div class="user-pic hover-cursor" ng-click="userpage(post.user_id)">
+			<img ng-src="{{post.user_pic_url}}" alt="">
+		</div>
+		<div class="info">
+			<div class="user-name"><span class="hover-cursor" ng-click="userpage(post.user_id)">{{post.username}}</span></div>
+			<div class="post-publish-time timeago" title="{{post.post_add_time}}">{{post.time_ago}}</div>
+		</div>
+		<div class="post-counters">
+			<p>
+				<span class="views">{{post.views}}</span>
+				<a href=""><span class="likes">{{post.likes}}</span></a>
+				<a href=""><span class="comments">{{post.comments}}</span></a>
+			</p>
+		</div>
+	</div>
+	<div class="divider">
+		<div class="top-comments" ng-if="post.top == 'comments'">Шторм коментарiв</div>
+		<div class="top-likes" ng-if="post.top == 'likes'">Море лайкiв</div>
+		<div class="top-views" ng-if="post.top == 'views'">Буря переглядiв</div>
+	</div>
+	<div class="post-excerpt">
+		<h3 class="post-title">{{post.post_title}}</h3>
+		<p>{{post.post_content}}<span class="readmore text" ng-click="">Переглянулти матерiал</span></p>
+	</div>
+	<div class="share-links">
+		<div class="like">Подобається</div>
+		<div class="share">Поділитися</div>
+		<div class="report">Поскаржитися</div>
+	</div>
+	<div class="divider"></div>
+	<div>
+		<p class="comments-title">Коментарi</p>
+		<ul class="comments" ng-controller="commentsCtrl">
+			<li ng-repeat="comment in comments">
+				<div class="user-pic hover-cursor" ng-click="userpage(comment.user_id)">
+					<img ng-src="{{comment.user_pic_url}}" alt="">
+				</div>
+				<div class="comment-content">
+					<div class="info">
+						<div class="user-name"><span class="hover-cursor" ng-click="userpage(comment.user_id)">{{comment.username}}</span></div>
+						<div class="post-publish-time timeago" title="{{comment.comment_time}}">{{comment.time_ago}}</div>
+						<div class="likes-indicator">{{comment.likes}}</div>
+					</div>
+					<div class="comment-text">{{comment.comment_text}}</div>
+					<div class="controls">
+						<p><span class="add-like">Подобається</span><span class="comment-respond">Відповідь</span></p>
+					</div>
+					<ul class="subcomments" ng-if="comment.subcomments === true">
+						<li ng-repeat="subcomment in subcomments">
+							<div class="user-pic hover-cursor" ng-click="userpage(subcomment.user_id)">
+								<img ng-src="{{subcomment.user_pic_url}}" alt="">
+							</div>
+							<div class="comment-content">
+								<div class="info">
+									<div class="user-name"><span class="hover-cursor" ng-click="userpage(subcomment.user_id)">{{subcomment.username}}</span></div>
+									<div class="post-publish-time timeago" title="{{subcomment.comment_time}}">{{subcomment.time_ago}}</div>
+									<div class="likes-indicator">{{comment.likes}}</div>
+								</div>
+								<div class="comment-text">{{subcomment.comment_text}}</div>
+								<div class="controls">
+									<p><span class="add-like">Подобається</span><span class="comment-respond">Відповідь</span></p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

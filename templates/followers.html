@@ -1,0 +1,55 @@
+<div class="row userpage" ng-repeat="follower in followers">
+	<div class="userpage-header">
+		<div class="user-pic">
+			<img src="../img/user.jpg" alt="">
+		</div>
+		<div class="info">
+			<div class="user-name">Алексей Бондаренко</div>
+			<!--<div class="progressbar-wrapper"><progress value="0.6"></progress><span>Заповнено: 60%</span></div>-->
+		</div>
+		<div class="userpage-icons">
+			<p>
+				<a href=""><span class="docs">13</span></a>
+				<a href=""><span class="likes">23</span></a>
+				<a href=""><span class="visioners">23</span></a>
+			</p>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div class="user-info">
+		<p>Заголовок 1: <span>описание 1</span></p>
+		<p>Заголовок 2: <span>описание 2</span></p>
+		<p>Заголовок 3: <span>описание 3</span></p>
+		<div class="hidden-block">
+			<p>Заголовок 4: <span>описание 4</span></p>
+			<p>Заголовок 5: <span>описание 5</span></p>
+			<p>Заголовок 6: <span>описание 6</span></p>
+			<p>Заголовок 7: <span>описание 7</span></p>
+			<p>Заголовок 8: <span>описание 8</span></p>
+			<p>Заголовок 9: <span>описание 9</span></p>
+			<p>Заголовок 10: <span>описание 10</span></p>
+			<p>Заголовок 11: <span>описание 11</span></p>
+			<p>Заголовок 12: <span>описание 12</span></p>
+			<p>Заголовок 13: <span>описание 13</span></p>
+			<p>Заголовок 14: <span>описание 14</span></p>
+			<p>Заголовок 15: <span>описание 15</span></p>
+		</div>
+		<div class="hidden-block-controls">
+			<span class="show-hidden-block" ng-click="showUserInfo($index)">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 14 15" style="enable-background:new 0 0 14 15;" xml:space="preserve">
+            <path d="M8.5,7.5c0-0.1,0-0.2-0.1-0.3L1.8,0.6C1.7,0.6,1.6,0.5,1.5,0.5c-0.1,0-0.2,0-0.3,0.1L0.5,1.3C0.4,1.4,0.3,1.5,0.3,1.7
+                c0,0.1,0,0.2,0.1,0.3L6,7.5L0.5,13c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3l0.7,0.7c0.1,0.1,0.2,0.1,0.3,0.1
+                c0.1,0,0.2,0,0.3-0.1l6.5-6.5C8.4,7.7,8.5,7.6,8.5,7.5L8.5,7.5z M8.5,7.5"/>
+            <path d="M13.7,7.5c0-0.1,0-0.2-0.1-0.3L7,0.6C6.9,0.6,6.8,0.5,6.7,0.5c-0.1,0-0.2,0-0.3,0.1L5.7,1.3C5.6,1.4,5.5,1.5,5.5,1.7
+                c0,0.1,0,0.2,0.1,0.3l5.5,5.5L5.7,13c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3l0.7,0.7c0.1,0.1,0.2,0.1,0.3,0.1
+                c0.1,0,0.2,0,0.3-0.1l6.5-6.5C13.6,7.7,13.7,7.6,13.7,7.5L13.7,7.5z M13.7,7.5"/>
+            </svg>
+			</span>
+			<!--<div class="icon profile-edit" ng-click="showModal()">-->
+			<!--</div>-->
+			<!--<div class="icon profile-settings"></div>-->
+			<div class="report">Поскаржитися</div>
+		</div>
+	</div>
+</div>
