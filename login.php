@@ -1,7 +1,8 @@
-
 <?php
-var_dump($_REQUEST);
-?><!DOCTYPE html>
+include ('Controller/LoginController.php');
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -166,25 +167,25 @@ var_dump($_REQUEST);
 						<h1>Реєстрація</h1>
 						<a id="register_facebook" href="" class="register-with-facebook btn big blue">Зареєструватись з facebook</a>
 						<form id="create_new_account_form" action="#" method="post" class="regisration-form" onsubmit="return false;">
-							<input id="user_first" type="text" placeholder="Ім’я">
-							<input id="user_last" type="text" placeholder="Прізвище">
-							<input id="user_email" type="email" placeholder="Ваша електронна адреса">
-							<input id="user_phone" type="tel" placeholder="Ваш номер мобільного телефону">
-							<input id="user_pass1" type="password" placeholder="Пароль">
+							<input id="user_first" type="text" placeholder="Ім’я" name="user_name">
+							<input id="user_last" type="text" placeholder="Прізвище" name="user_sname">
+							<input id="user_email" type="email" placeholder="Ваша електронна адреса" name="user_email">
+							<input id="user_phone" type="tel" placeholder="Ваш номер мобільного телефону" name="user_phone">
+							<input id="user_pass1" type="password" placeholder="Пароль" name="user_pass">
 							<input id="user_pass2" type="password" placeholder="Підвердіть пароль">
 							<p>Дата народження</p>
 							<div class="date-of-birth">
 								<div class="day">
 									<select name="day" id="user_day">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
+										<option value="01">1</option>
+										<option value="02">2</option>
+										<option value="03">3</option>
+										<option value="04">4</option>
+										<option value="05">5</option>
+										<option value="06">6</option>
+										<option value="07">7</option>
+										<option value="08">8</option>
+										<option value="09">9</option>
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>
@@ -211,15 +212,15 @@ var_dump($_REQUEST);
 								</div>
 								<div class="month">
 									<select name="month" id="user_month">
-										<option value="1">Січень</option>
-										<option value="2">Лютий</option>
-										<option value="3">Березень</option>
-										<option value="4">Квітень</option>
-										<option value="5">Травень</option>
-										<option value="6">Червень</option>
-										<option value="7">Липень</option>
-										<option value="8">Серпень</option>
-										<option value="9">Вересень</option>
+										<option value="01">Січень</option>
+										<option value="02">Лютий</option>
+										<option value="03">Березень</option>
+										<option value="04">Квітень</option>
+										<option value="05">Травень</option>
+										<option value="06">Червень</option>
+										<option value="07">Липень</option>
+										<option value="08">Серпень</option>
+										<option value="09">Вересень</option>
 										<option value="10">Жовтень</option>
 										<option value="11">Листопад</option>
 										<option value="12">Грудень</option>
@@ -302,13 +303,16 @@ var_dump($_REQUEST);
 								<div class="search-switcher">
 									<div class="switcher-line"><div id="switcher-indicator" class="top user_sex" data-search="search-people"></div></div>
 									<div class="switcher-text">
-										<div id="search-people">Жінка</div>
+
+										<div id="search-people" >Жінка</div>
 										<div id="search-content">Чоловік</div>
 									</div>
 								</div>
 							</div>
 							<p class="agreement"><span>Натискаючи на “Створити акаунт” Ви погоджуєтесь з нашими умовами використання ресурсу та умовами використання даних.</span></p>
-							<button id="create_account" class="btn" onclick="form.submit()">Створити акаунт</button>
+							<input value="male" name="sex" class="hidden">
+							<input value="registration" name="login" class="hidden">
+							<button  id="create_account" class="btn" onclick="form.submit()" >Створити акаунт</button>
 						</form>
 					</div>
 				</div>

@@ -23,7 +23,7 @@ class DataBaseController
         try {
             $this->pdo = new PDO($dsn, $this->user, $this->pass);
         } catch (PDOException $e) {
-            die('Ïîäêëş÷åíèå íå óäàëîñü: ' . $e->getMessage());
+            die('ĞŸĞ¾Ğ´ĞºĞ»ÑÑ‡ĞµĞ½Ğ¸Ğµ Ğ½Ğµ ÑƒĞ´Ğ°Ğ»Ğ¾ÑÑŒ: ' . $e->getMessage());
         }
     }
 
@@ -43,18 +43,43 @@ class DataBaseController
 
     function ifUserExist($email)
     {
-//        var_dump($email);
-        $sql = "SELECT * FROM `user` WHERE user_email= ?";
+        var_dump($email);
+//        $email='sad';
+        $sql = "SELECT * FROM `users` WHERE user_email= ?";
          $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute($email);
+//        return $stmt->execute([$email]);
+        $stmt->execute([$email]);
+        return $stmt->fetchColumn();
     }
 
-//    function addUser($userName, $userSname, $userEmail, $userPhone, $userPass,$userBirthday, $userSex){
-    function addUser(){
-            $sql="INSERT INTO `users` (`id`, `user_name`, `user_sname`, `user_email`, `user_phone`, `user_pass`, `user_birthday`, `user_sex`, `reg_date`)
-                  VALUES (NULL, 'sad', 'sad', 'sad', 'sd', 'saf', '2018-07-03', 'male', '2018-07-06 02:00:03');";
+    function addUser($userData){
+//        var_dump($userData);
+//    function addUser(){
+//            $sql="INSERT INTO `users` (`id`, `user_name`, `user_sname`, `user_email`, `user_phone`, `user_pass`, `user_birthday`, `user_sex`, `reg_date`)
+//                  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $sql="INSERT INTO `users`(`id`, `user_name`, `user_sname`, `user_email`, `user_phone`, `user_pass`, `user_birthday`, `user_sex`, `reg_date`) VALUES (NULL,?,?,?,?,?,?,?,?);";
+//        var_dump($sql);
         $stmt =$this->pdo->prepare($sql);
-          return $stmt->execute();
+//        var_dump($stmt->execute([
+//            $userData['user_name'],
+//            $userData['user_sname'],
+//            $userData['user_email'],
+//            $userData['user_phone'],
+//            $userData['user_pass'],
+//            $userData['user_birthday'],
+//            $userData['user_sex'],
+//            $userData['user_reg_date'],
+//        ]));
+          return $stmt->execute([
+              $userData['user_name'],
+                $userData['user_sname'],
+                  $userData['user_email'],
+                      $userData['user_phone'],
+                          $userData['user_pass'],
+                              $userData['user_birthday'],
+                                  $userData['sex'],
+                                      $userData['user_reg_date'],
+                                          ]);
     }
 
     function  selectAll()
@@ -120,5 +145,5 @@ class DataBaseController
 }
 
 
-$f = DataBaseController::getObject()->addUser();
-var_dump($f);
+//$f = DataBaseController::getObject()->addUser();
+//var_dump($f);
